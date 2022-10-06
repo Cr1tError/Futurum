@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campaigns</title>
+</head>
+<body>
+<div th:switch="${campaigns}">
+    <h2 th:case="null">No campaigns found!</h2>
+    <div th:case="*">
+        <h2>Campaigns</h2>
+        <table>
+            <thead>
+            <tr>
+                <th hidden>Id</th>
+                <th>Name</th>
+                <th>Keywords</th>
+                <th>Bid amount</th>
+                <th>Campaign fund</th>
+                <th>Status</th>
+                <th>City</th>
+                <th>Kilometers</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="campaign : ${campaigns}">
+                <td th:text="${campaign.id}" hidden></td>
+                <td th:text="${campaign.name}"></td>
+                <td th:text="${campaign.keywords}"></td>
+                <td th:text="${campaign.bidAmount}"></td>
+                <td th:text="${campaign.campaignFund}"></td>
+                <td th:text="${campaign.status}"></td>
+                <td th:text="${campaign.city}"></td>
+                <td th:text="${campaign.kilometers}"></td>
+
+                <td><a th:href="@{campaign-update/{id}(id=${campaign.id})}">Edit</a></td>
+                <td><a th:href="@{campaign-delete/{id}(id=${campaign.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/campaign-create"> Create campaigns</a></p>
+</div>
+</body>
+</html>

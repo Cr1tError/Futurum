@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Campaign update</title>
+</head>
+<body>
+<form action="#" th:action="@{/campaign-update}" th:object="${campaignTo}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br>
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="name">
+    <br>
+    <label for="keywords">Keywords</label>
+    <input type="text" th:field="*{keywords}" id="keywords" placeholder="keywords">
+    <br>
+    <label for="bidAmount">Bid amount</label>
+    <input type="number" th:field="*{bidAmount}" id="bidAmount" placeholder="keywords">
+    <br>
+    <label for="campaignFund">Campaign fund</label>
+    <input type="number" th:field="*{campaignFund}" id="campaignFund" placeholder="campaignFund">
+    <br>
+    <label for="statusOption1">Active</label>
+    <input type="radio" id="statusOption1" value="Active" th:field="*{status}">
+    <label for="statusOption2">Disable</label>
+    <input type="radio" id="statusOption2" value="Disable" th:field="*{status}">
+    <br>
+    <label for="option1">Rome</label>
+    <input type="radio" id="option1" value="Rome" th:field="*{city}">
+    <label for="option2">Paris</label>
+    <input type="radio" id="option2" value="Paris" th:field="*{city}">
+    <br>
+    <label for="kilometers">Kilometers</label>
+    <input type="number" th:field="*{kilometers}" id="kilometers" placeholder="kilometers" >
+    <br>
+
+    <input type="submit" value="Update profile">
+</form>
+
+</body>
+</html>
