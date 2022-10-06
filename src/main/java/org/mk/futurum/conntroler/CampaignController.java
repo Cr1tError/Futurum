@@ -52,7 +52,7 @@ public class CampaignController {
         return "redirect:/campaigns";
     }
 
-    @GetMapping("campaign-delete/{id}")
+    @GetMapping("/campaign-delete/{id}")
     public String deleteCampaign(@PathVariable("id") long id){
         campaignService.deleteById(id);
         return "redirect:/campaigns";

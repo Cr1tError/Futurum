@@ -1,0 +1,6 @@
+
+api:
+/campaigns - get all campaigns, also start page
+/campaign-delete/{id}  - delete campaign by id
+/campaign-update/{id} - update campaign
+/campaign-create -create new campaign
